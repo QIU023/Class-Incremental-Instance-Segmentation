@@ -137,8 +137,10 @@ class COCODetection(data.Dataset):
             for key, value in cur_anns.items():
                 if value['category_id'] == i:
                     cur_list_total.append(value['image_id'])
+        # overlapped setting ? traverse each instance, put it into list
 
         self.ids_cur = list(set(cur_list_total))
+        # remove duplication!
 
 
         self.ids = self.ids_cur
